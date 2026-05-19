@@ -8,7 +8,9 @@ function App() {
 
   return (
     <div className="App">
+
       <h1>Aht'sTask Manager</h1>
+
       <input
         type="text"
         placeholder="Add a new task..."
