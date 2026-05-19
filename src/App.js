@@ -36,7 +36,11 @@ function App() {
         
             }}
             >
-              {task.text}
+              <span>{task.text}</span>
+              <button onClick={(e) => {
+                e.stopPropagation();
+                setTasks(tasks.filter((_, i) => i !== index));
+              }}>Delete</button>
               </li>
         ))}
       </ul>
