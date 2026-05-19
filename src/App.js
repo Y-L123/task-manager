@@ -22,7 +22,22 @@ function App() {
       }}>Add Task</button>
       <ul>
         {tasks.map((task, index) => (
-          <li key={index}>{task.text}</li>
+          <li
+            key={index}
+            onClick={() => {
+              const updatedTasks = tasks.map((t, i) =>
+                i === index ? { ...t, completed: !t.completed } : t
+            );
+              setTasks(updatedTasks);
+          }}
+            style={{
+              textDecoration: task.completed ? 'line-through' : 'none',
+              cursor: 'pointer'
+        
+            }}
+            >
+              {task.text}
+              </li>
         ))}
       </ul>
     </div>
